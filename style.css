@@ -1,0 +1,102 @@
+:root{
+    --dark: #023042;
+    --red: #BA1200;
+    --blue: #011E2A;
+    --orange: #F2AF29;
+    --grey: #F7F7F2;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    background: var(--dark);
+}
+
+header{
+    width: 20rem;
+    margin: 2rem auto;
+    color: var(--red);
+}
+
+
+.taskList{
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.taskList #tasks .task{
+    margin: 1rem 0;
+    display: flex;
+    background-color: var(--blue);
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.taskList #tasks .task .taskFinish{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    margin: 0 1rem 0 0;
+    background-color: var(--orange);
+}
+
+.taskList #tasks .task .taskFinish:hover{
+    opacity: 0.8;
+    cursor: pointer;   
+}
+
+.taskList #tasks .task .taskFinish:active{
+    opacity: 0.6;
+}
+
+.taskList #tasks .task p{
+    color: var(--grey);
+    padding: 0.25rem 0;
+}
+
+/*.taskList #tasks .inputTask{
+    margin: 1rem 0;
+    background-color: var(--grey);
+    background-image: linear-gradient(to right, var(--red), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+}
+*/
+
+.taskList #tasks .taskForm{
+    margin: 2rem 0;
+    background-color: var(--blue);
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.taskList #tasks .taskForm input{
+    border-radius: 1rem;
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--grey);
+    padding: 0.125rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.taskList #tasks .taskForm input::placeholder{
+    background-image: linear-gradient(to right, var(--red), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.taskList #addTask{
+    width: 8rem;
+    margin: 1rem auto;
+}
+
