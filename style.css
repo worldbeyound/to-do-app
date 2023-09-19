@@ -1,9 +1,11 @@
 :root{
-    --dark: #023042;
+    --dark: #1B2A41;
     --red: #BA1200;
     --blue: #011E2A;
     --orange: #F2AF29;
     --grey: #F7F7F2;
+    --pink: #FF006E;
+    --azure: #3A86FF;
 }
 
 *{
@@ -34,15 +36,62 @@ header{
 .taskList #tasks .task{
     margin: 1rem 0;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--blue);
-    height: 2rem;
+    height: 3rem;
     border-radius: 1rem;
 }
 
+.taskList #tasks .task .contents{
+    display: flex;
+}
+
+.taskList #tasks .task .actionButtons{
+    display: flex;
+    background-color: var(--blue);
+}
+
+.taskList #tasks .task .actionButtons .editButton{
+    background-image: linear-gradient(to right, var(--pink), var(--azure));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+    margin: 0 1rem 0 0;
+    font-size: 1.25rem;
+}
+
+.taskList #tasks .task .actionButtons .editButton:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.taskList #tasks .task .actionButtons .editButton:active{
+    opacity: 0.6;
+}
+
+.taskList #tasks .task .actionButtons .deleteButton{
+    background-color: var(--red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+    margin: 0 1rem 0 0;
+    font-size: 1.25rem;
+}
+
+.taskList #tasks .task .actionButtons .deleteButton:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.taskList #tasks .task .actionButtons .deleteButton:active{
+    opacity: 0.6;
+}
+
 .taskList #tasks .task .taskFinish{
-    width: 2rem;
-    height: 2rem;
-    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
     margin: 0 1rem 0 0;
     background-color: var(--orange);
 }
@@ -56,9 +105,23 @@ header{
     opacity: 0.6;
 }
 
-.taskList #tasks .task p{
+.taskList #tasks .task .contents input{
+    background-color: var(--blue);
+    border: none;
     color: var(--grey);
-    padding: 0.25rem 0;
+    padding: 0.625rem 0;
+    font-size: 1.25rem;
+}
+
+.taskList #tasks .task .contents .taskTextNormal::placeholder{
+    border: none;
+    color: var(--grey);
+    font-size: 1.25rem;
+    text-decoration-line: none;
+}
+
+.taskList #tasks .task .contents .taskTextCrossed::placeholder{
+    text-decoration: line-through;
 }
 
 /*.taskList #tasks .inputTask{

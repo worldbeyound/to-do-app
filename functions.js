@@ -33,10 +33,64 @@ window.addEventListener('load', () => {
                 return;
             }
 
+            // Creating new task
             const new_task = document.createElement("div");
             new_task.classList.add("task");
 
-            const new_task_button = document.createElement("button");
+            // Adding contents of task
+            const new_task_contents = document.createElement("div");
+            new_task_contents.classList.add("contents");
+
+            const new_task_finish = document.createElement("button");
+            new_task_finish.classList.add("taskFinish");
+
+            const new_task_text = document.createElement("input");
+            new_task_text.classList.add("taskTextNormal");
+            new_task_text.readOnly = "readOnly";
+            new_task_text.placeholder = task_text;
+
+            new_task_contents.appendChild(new_task_finish);
+            new_task_contents.appendChild(new_task_text);
+
+            new_task.appendChild(new_task_contents);
+
+            // Edit, delete buttons
+            const new_task_buttons = document.createElement("div");
+            new_task_buttons.classList.add("actionButtons");
+
+            const new_task_buttons_edit = document.createElement("button");
+            new_task_buttons_edit.innerText = "Edit";
+            new_task_buttons_edit.classList.add("editButton");
+
+            const new_task_buttons_delete = document.createElement("button");
+            new_task_buttons_delete.innerText = "Delete";
+            new_task_buttons_delete.classList.add("deleteButton");
+
+            new_task_buttons.appendChild(new_task_buttons_edit);
+            new_task_buttons.appendChild(new_task_buttons_delete);
+
+            new_task.appendChild(new_task_buttons);
+
+            // Appending final child
+            form.remove();
+
+            task_list.appendChild(new_task)
+            
+            
+            new_task_finish.addEventListener('click', () => {
+                if (new_task_text.classList.length == 1){
+                    new_task_finish.style.backgroundColor = "#6DA34D";
+                    new_task_text.classList.add("taskTextCrossed");
+                }
+                else{
+                    new_task_finish.style.backgroundColor = "#F2AF29";
+                    new_task_text.classList.remove("taskTextCrossed");
+                }
+            })
+
+
+
+            /*const new_task_button = document.createElement("button");
             new_task_button.classList.add("taskFinish");
 
 
@@ -53,7 +107,7 @@ window.addEventListener('load', () => {
 
             form.remove();
 
-            task_list.appendChild(new_task);
+            task_list.appendChild(new_task); */
         }
         /*
         
