@@ -74,21 +74,50 @@ window.addEventListener('load', () => {
             // Appending final child
             form.remove();
 
-            task_list.appendChild(new_task)
-            
-            
             new_task_finish.addEventListener('click', () => {
-                if (new_task_text.classList.length == 1){
-                    new_task_finish.style.backgroundColor = "#6DA34D";
+                if (new_task_text.classList[0] == "taskTextNormal"){
+                    new_task_text.style.textDecorationLine = "line-through";
                     new_task_text.classList.add("taskTextCrossed");
+                    new_task_text.classList.remove("taskTextNormal");
+                    new_task_finish.style.backgroundColor = "#6DA34D";
+                    new_task_buttons_edit.style.display = "none";
                 }
                 else{
-                    new_task_finish.style.backgroundColor = "#F2AF29";
+                    new_task_text.style.textDecorationLine = "";
+                    new_task_text.classList.add("taskTextNormal");
                     new_task_text.classList.remove("taskTextCrossed");
+                    new_task_finish.style.backgroundColor = "#F2AF29";
+                    new_task_buttons_edit.style.display = "block";
+                }
+            })
+            
+            // Editing the task
+            new_task_buttons_edit.addEventListener('click', () => {
+                if (new_task_text.getAttribute("readOnly") != null){
+                    new_task_text.removeAttribute("readOnly");
+                    new_task_text.placeholder = "";
+                    new_task_text.focus();
+                    new_task_buttons_edit.innerText = "Save";
+                }
+                else{
+                    const new_task = new_task_text.value;
+                    new_task_text.setAttribute("readonly", "readOnly");
+                    new_task_text.placeholder = new_task;
+                    new_task_buttons_edit.innerText = "Edit";
                 }
             })
 
 
+            // Delete button
+            new_task_buttons_delete.addEventListener('click', () => {
+                new_task.remove();
+            })
+            
+            task_list.appendChild(new_task)
+            
+            // Adding functionality
+
+            // Finishing the task
 
             /*const new_task_button = document.createElement("button");
             new_task_button.classList.add("taskFinish");

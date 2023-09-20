@@ -113,6 +113,10 @@ header{
     font-size: 1.25rem;
 }
 
+.taskList #tasks .task .contents input:focus{
+    outline: none;
+}
+
 .taskList #tasks .task .contents .taskTextNormal::placeholder{
     border: none;
     color: var(--grey);
@@ -121,7 +125,7 @@ header{
 }
 
 .taskList #tasks .task .contents .taskTextCrossed::placeholder{
-    text-decoration: line-through;
+    text-decoration-line: line-through;
 }
 
 /*.taskList #tasks .inputTask{
@@ -162,4 +166,3 @@ header{
     width: 8rem;
     margin: 1rem auto;
 }
-
