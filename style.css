@@ -33,6 +33,34 @@ header{
     margin: 0 auto;
 }
 
+.taskList .searchBar{
+    background-color: #011E2A;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.taskList .searchBar::placeholder{
+    text-align: center;
+    background-image: linear-gradient(to right, var(--red), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.taskList #tasks{
+    margin-top: 2.5rem;
+    width: 100%;
+    background-color: #192538;
+    min-height: 25rem;
+    border-radius: 1.25rem;
+}
+
+.taskList #tasks h2{
+    text-align: center;
+    color: var(--grey);
+}
+
 .taskList #tasks .task{
     margin: 1rem 0;
     display: flex;

@@ -1,5 +1,6 @@
 const task_list = document.getElementById("tasks");
 const button = document.getElementById("addTask");
+const input = document.getElementById("searchBar");
 
 function createNewTask(taskName, isNew, ID){
 
@@ -126,13 +127,44 @@ button.addEventListener('click', () => {
     }
 })
 
+function checkSubstring(str1, str2){
+    var size = 0;
+    if (str1.length > str2.length){
+        size = str2.length;
+    }
+    else{
+        size = str1.length;
+    }
+
+    for (var i = 0; i < size; i ++){
+        if (str1[i] != str2[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+input.addEventListener('input', () => {
+    task_list.innerHTML = "";
+    const search_text = input.value;
+    for (var i = 0; i < sessionStorage.length; i ++){
+        const key = sessionStorage.key(i);
+        const taskName = sessionStorage.getItem(key);
+        
+        if (checkSubstring(search_text, taskName)){
+            const new_task = createNewTask(taskName, false, key);
+            task_list.appendChild(new_task);   
+        }
+    }
+});
+
 window.addEventListener('load', () => {
     sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
     for (var i = 0; i < sessionStorage.length; i ++){
         const key = sessionStorage.key(i);
         const taskName = sessionStorage.getItem(key);
-        const new_task = createNewTask(taskName, false, key);
 
+        const new_task = createNewTask(taskName, false, key);
         task_list.appendChild(new_task);
     }
 })
