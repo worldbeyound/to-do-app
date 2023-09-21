@@ -161,17 +161,6 @@ header{
     text-decoration-line: line-through;
 }
 
-/*.taskList #tasks .inputTask{
-    margin: 1rem 0;
-    background-color: var(--grey);
-    background-image: linear-gradient(to right, var(--red), var(--orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
-    border-radius: 1.5rem;
-}
-*/
-
 .taskList #tasks .taskForm{
     margin: 2rem 0;
     background-color: var(--blue);
