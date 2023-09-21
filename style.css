@@ -164,5 +164,9 @@ header{
 
 .taskList #addTask{
     width: 8rem;
+    height: 1.625rem;
+    color: white;
+    background-color: #D14A0C;
+    border: none;
     margin: 1rem auto;
 }
