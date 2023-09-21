@@ -111,6 +111,7 @@ header{
     color: var(--grey);
     padding: 0.625rem 0;
     font-size: 1.25rem;
+    width: 60rem;
 }
 
 .taskList #tasks .task .contents input:focus{
