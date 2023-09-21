@@ -1,2 +1,2 @@
-# to-do-app
-This app allows to search, add, delete, edit items.
+# To-Do
+This web application allows for manipulation of tasks like delete, add, search, and edit.
