@@ -128,6 +128,9 @@ button.addEventListener('click', () => {
 })
 
 function checkSubstring(str1, str2){
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+
     var size = 0;
     if (str1.length > str2.length){
         size = str2.length;
